@@ -1,0 +1,97 @@
+:root {
+  --spin-color: linear-gradient(to right, aqua, white);
+}
+html {
+  height: 100%;
+}
+body {
+  background: linear-gradient(#141e30, #243b55);
+  margin: 0;
+  padding: 0;
+}
+@keyframes porder-spin {
+  0% {
+    border-color: transparent transparent transparent aqua;
+  }
+  25% {
+    border-color: transparent transparent aqua transparent;
+  }
+  50% {
+    border-color: transparent aqua transparent transparent;
+  }
+  75% {
+    border-color: aqua transparent transparent transparent;
+  }
+  100% {
+    border-color: transparent transparent transparent aqua;
+  }
+}
+.container {
+  background: rgba(0, 0, 0, 0.5);
+  width: 400px;
+  height: 400px;
+  margin: 150px auto;
+  text-align: center;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 20px 3px cyan;
+}
+.container h1 {
+  padding-top: 50px;
+  padding-bottom: 10px;
+  font-size: 50px;
+  color: white;
+}
+.container button {
+  background-color: transparent;
+  border: none;
+  border: 2px solid;
+  height: 35px;
+  width: 80%;
+  color: white;
+  font-size: 18px;
+  animation-duration: 1s;
+  animation-name: porder-spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.container button:hover {
+  background-color: aqua;
+  box-shadow: 0px 0px 6px 6px cyan;
+  color: black;
+}
+.container .input-box {
+  position: relative;
+}
+.container .input-box input {
+  width: 80%;
+  height: 30px;
+  margin-bottom: 50px;
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  outline: none;
+  font-size: 15px;
+  color: white;
+}
+.container .input-box label {
+  color: white;
+  position: absolute;
+  top: 5px;
+  left: 45px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.container .input-box input:focus {
+  border-color: aqua;
+}
+.container .input-box input:focus ~ label {
+  top: -10px;
+  font-size: 12px;
+  color: aqua;
+}
+@media (max-width: 470px) {
+  .container {
+    width: 300px;
+  }
+}
